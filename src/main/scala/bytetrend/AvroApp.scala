@@ -5,6 +5,10 @@ import java.io.File
 import bytetrend.avro.User
 
 /**
+  * https://avro.apache.org/docs/1.8.1/gettingstartedjava.html
+  * Run from command line:
+  * mvn -q exec:java -Dexec.mainClass=bytetrend.AvroApp
+  *
   * @author ${user.name}
   */
 object AvroApp {

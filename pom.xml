@@ -43,10 +43,17 @@
         </dependency>
         <dependency>
             <groupId>org.specs2</groupId>
-            <artifactId>specs2_${scala.tools.version}</artifactId>
-            <version>3.7</version>
+            <artifactId>specs2-core_2.11</artifactId>
+            <version>3.8.9</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.specs2</groupId>
+            <artifactId>specs2-matcher-extra_2.11</artifactId>
+            <version>3.8.9</version>
+            <scope>test</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.scalatest</groupId>
             <artifactId>scalatest_${scala.tools.version}</artifactId>
