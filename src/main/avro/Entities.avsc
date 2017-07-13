@@ -1,0 +1,15 @@
+{
+  "imports": ["Hashtag.avsc"],
+  "imports": ["Media.avsc"],
+  "imports": ["Url.avsc"],
+  "imports": ["UserMention.avsc"],
+  "namespace": "bytetrend.twitter",
+  "name": "Entities",
+  "type": "record",
+  "fields": [
+    {"name": "hashtags", "type": { "type":"array","items": "Hashtag"}},
+    {"name": "media",  "type": { "type":"array","items": "Media"}},
+    {"name": "urls", "type": { "type":"array","items": "Url"}},
+    {"name": "user_mentions", "type": { "type":"array","items": [ "null","UserMention"]}}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "namespace": "bytetrend.twitter",
+  "type": "record",
+  "name": "Size",
+  "fields": [
+    {"name": "h", "type": "int"},
+    {"name": "w",  "type": "int"},
+    {"name" : "resize", "type": "string"}
+  ]
+}

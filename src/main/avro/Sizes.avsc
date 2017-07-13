@@ -1,0 +1,12 @@
+{
+  "imports": ["Size.avsc"],
+  "namespace": "bytetrend.twitter",
+  "type": "record",
+  "name": "Sizes",
+  "fields": [
+    {"name": "thumb", "type":"Size"},
+    {"name": "large",  "type":"Size"},
+    {"name" : "medium", "type":"Size"},
+    {"name": "small", "type":"Size"}
+  ]
+}

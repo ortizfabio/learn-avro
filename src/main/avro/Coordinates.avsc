@@ -1,0 +1,12 @@
+{
+  "namespace": "bytetrend.twitter",
+  "name": "Coordinates",
+  "type": "record",
+  "fields": [
+        {
+          "name": "coordinates",
+          "type":{ "type": "array", "items": "float"}
+        },
+        {"name" : "type", "type": "string"}
+  ]
+}

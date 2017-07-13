@@ -1,0 +1,10 @@
+{
+  "namespace": "bytetrend.twitter",
+  "name": "Contributor",
+  "type": "record",
+  "fields": [
+    {"name": "id", "type": "long"},
+    {"name": "id_str",  "type": "string"},
+    {"name" : "screen_name", "type": "string"}
+  ]
+}

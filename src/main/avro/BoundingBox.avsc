@@ -1,0 +1,12 @@
+{
+  "namespace": "bytetrend.twitter",
+  "name": "BoundingBox",
+  "type": "record",
+  "fields": [
+    {
+      "name": "coordinates",
+      "type":{ "type": "array", "items": {"type": "array", "items":{"type":"array","items":"float"}}}
+    },
+    {"name" : "type", "type": "string"}
+  ]
+}

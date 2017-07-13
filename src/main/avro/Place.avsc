@@ -1,0 +1,17 @@
+{
+  "imports": ["BoundingBox.avsc"],
+  "namespace": "bytetrend.twitter",
+  "name": "Place",
+  "type": "record",
+  "fields": [
+    {"name" : "attributes", "type" : { "type" : "map", "values" : "string"}},
+    {"name" : "bounding_box", "type": "BoundingBox"},
+    {"name" : "country", "type": "string"},
+    {"name" : "country_code", "type": "string"},
+    {"name" : "full_name", "type": "string"},
+    {"name" : "id", "type": "string"},
+    {"name" : "name", "type": "string"},
+    {"name" : "place_type", "type": "string"},
+    {"name" : "url", "type": "string"}
+  ]
+}

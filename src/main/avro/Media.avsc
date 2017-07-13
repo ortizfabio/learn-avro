@@ -1,0 +1,20 @@
+{
+  "imports": ["Sizes.avsc"],
+  "namespace": "bytetrend.twitter",
+  "type": "record",
+  "name": "Media",
+  "fields": [
+    {"name": "display_url", "type":"string"},
+    {"name": "expanded_url",  "type":"string"},
+    {"name" : "id", "type":"long"},
+    {"name" : "id_str", "type":"string"},
+    {"name" : "indices", "type":{ "type": "array", "items": "int"}},
+    {"name" : "media_url", "type":"string"},
+    {"name" : "media_url_https", "type":"string"},
+    {"name": "sizes", "type":"Sizes"},
+    {"name" : "source_status_id", "type":["null","long"]},
+    {"name" : "source_status_id_str", "type":["null","string"]},
+    {"name" : "type", "type":"string"},
+    {"name" : "url", "type":"string"}
+  ]
+}

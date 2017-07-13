@@ -5,17 +5,19 @@
     <artifactId>learn-avro</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>${project.artifactId}</name>
-    <description>My wonderfull scala app</description>
+    <description>Learn Avro by example</description>
     <inceptionYear>2010</inceptionYear>
     <licenses>
         <license>
-            <name>My License</name>
+            <name>None</name>
             <url>http://....</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
 
     <properties>
+        <avro.version>1.8.1</avro.version>
+        <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <encoding>UTF-8</encoding>
@@ -31,8 +33,28 @@
         </dependency>
         <dependency>
             <groupId>org.apache.avro</groupId>
+            <artifactId>avro-tools</artifactId>
+            <version>${avro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
             <artifactId>avro</artifactId>
-            <version>1.8.1</version>
+            <version>${avro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro-maven-plugin</artifactId>
+            <version>${avro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro-compiler</artifactId>
+            <version>${avro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro-ipc</artifactId>
+            <version>${avro.version}</version>
         </dependency>
         <!-- Test -->
         <dependency>
@@ -95,20 +117,38 @@
                     </includes>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.avro</groupId>
                 <artifactId>avro-maven-plugin</artifactId>
-                <version>1.8.1</version>
+                <version>${avro.version}</version>
                 <executions>
                     <execution>
+                        <id>avro</id>
                         <phase>generate-sources</phase>
                         <goals>
                             <goal>schema</goal>
+                       <!--     <goal>protocol</goal>
+                            <goal>idl-protocol</goal>  -->
                         </goals>
                         <configuration>
                             <sourceDirectory>${project.basedir}/src/main/avro/</sourceDirectory>
                             <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+                            <fieldVisibility>PRIVATE</fieldVisibility>
+                            <imports>
+                                <import>${project.basedir}/src/main/avro/Size.avsc</import>
+                                <import>${project.basedir}/src/main/avro/Sizes.avsc</import>
+                                <import>${project.basedir}/src/main/avro/BoundingBox.avsc</import>
+                                <import>${project.basedir}/src/main/avro/Place.avsc</import>
+                                <import>${project.basedir}/src/main/avro/Media.avsc</import>
+                                <import>${project.basedir}/src/main/avro/Hashtag.avsc</import>
+                                <import>${project.basedir}/src/main/avro/Url.avsc</import>
+                                <import>${project.basedir}/src/main/avro/UserMention.avsc</import>
+                                <import>${project.basedir}/src/main/avro/Coordinates.avsc</import>
+                                <import>${project.basedir}/src/main/avro/Contributor.avsc</import>
+                                <import>${project.basedir}/src/main/avro/Entities.avsc</import>
+                                <import>${project.basedir}/src/main/avro/TweetAndUsers.avsc</import>
+                                <import>${project.basedir}/src/main/avro/Tweets.avsc</import>
+                            </imports>
                         </configuration>
                     </execution>
                 </executions>
@@ -116,9 +156,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
         </plugins>

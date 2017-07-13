@@ -1,0 +1,14 @@
+{
+  "namespace": "bytetrend.twitter",
+  "name": "Url",
+  "type": "record",
+  "fields": [
+      {"name": "display_url", "type": "string"},
+      {"name": "expanded_url",  "type": "string"},
+      {
+          "name": "indices",
+          "type":{ "type": "array", "items": "int"}
+      },
+      {"name" : "url", "type": "string"}
+  ]
+}

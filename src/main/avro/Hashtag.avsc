@@ -1,0 +1,12 @@
+{
+  "namespace": "bytetrend.twitter",
+  "name": "Hashtag",
+  "type": "record",
+  "fields": [
+    {
+      "name": "indices",
+      "type":{ "type": "array", "items": "int"}
+    },
+    {"name" : "text", "type": "string"}
+  ]
+}
